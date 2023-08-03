@@ -1,0 +1,215 @@
+/**
+ * ----------
+ *
+ * @format
+ */
+
+/* ----------------- */
+/* Custom Properties */
+/* ----------------- */
+
+:root {
+  --clr-brand: hsl(158, 36%, 37%);
+  --clr-brand-dkr: hsl(158, 50%, 25%);
+  --clr-bg: hsl(30, 38%, 92%);
+  --clr-accent: hsl(212, 21%, 14%);
+  --clr-secondary: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-accent: 'Fraunces', serif;
+  --ff-base: 'Montserrat', sans-serif;
+
+  --fs-900: 5rem;
+  --fs-800: 4rem;
+  --fs-700: 3rem;
+  --fs-600: 2rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --gap: 1rem;
+}
+
+/* ---------- */
+/* Reset      */
+/* ---------- */
+
+/* Box-Sizing Rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove margin defaults */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+  margin: 0;
+}
+
+/* Set body core defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Make images easier to work */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for input button textarea select */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: ;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.title-text {
+  font-family: var(--ff-title);
+  font-weight: var(--fw-bold);
+}
+
+.body-text {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-secondary);
+}
+
+/* ------------------ */
+/* General Properties */
+/* ------------------ */
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-300);
+  color: var(--clr-secondary);
+  background-color: var(--clr-bg);
+}
+
+.container {
+  place-content: center;
+  min-height: 100vh;
+}
+
+.product {
+  place-items: center;
+  max-width: 90%;
+  margin: auto;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+  }
+}
+
+.product__content {
+  padding-inline: 1.5rem;
+  padding-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.product__category {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: var(--fs-200);
+}
+
+.product__title {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-600);
+  color: var(--clr-accent);
+  line-height: 1;
+  font-weight: var(--fw-bold);
+}
+
+.product__price {
+  font-size: var(--fs-600);
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  color: var(--clr-brand);
+}
+
+.product__original-price {
+  text-decoration: line-through;
+}
+
+.flex-group {
+  align-items: center;
+}
+
+.button {
+  background-color: var(--clr-brand);
+  color: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding-block: 0.825rem;
+}
+
+.button:hover {
+  background-color: var(--clr-brand-dkr);
+}
